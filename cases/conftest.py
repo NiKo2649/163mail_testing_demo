@@ -46,3 +46,5 @@ def refresh_page(had_login):
 
     yield
     had_login.refresh()
+
+    git@github.com:NiKo2649/163mail_testing_demo.git
