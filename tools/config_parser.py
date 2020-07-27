@@ -1,16 +1,17 @@
 # venv/Scripts/
 # -*- coding: utf-8 -*-
-# @Time : 2020/7/24 0:48
+# @Time : 2020/7/27 0:48
 # @Author : NiKo
 # @File : config_parser.py
 # @Software: PyCharm
 
 import configparser
 
+
 class ConfigParser(object):
-    def __init__(self):
+    def __init__(self, file):
         self.config = configparser.ConfigParser()
-        self.config.read("../config.ini", encoding='utf-8')
+        self.config.read(file, encoding='utf-8')
 
     def get_section(self, section):
         try:
@@ -19,7 +20,7 @@ class ConfigParser(object):
         except configparser.NoSectionError as e:
             print()
 
-    def get_option(self, section, option):
+    def get(self, section, option):
         try:
             data = self.config.get(section, option)
             return data
@@ -27,9 +28,3 @@ class ConfigParser(object):
             print()
 
 
-if __name__ == '__main__':
-    Config = ConfigParser()
-    data = Config.get_section('base')
-    print(data)
-    for item in data:
-        print(Config.get_option('base', item))
