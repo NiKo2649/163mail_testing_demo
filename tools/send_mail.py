@@ -21,7 +21,7 @@ class SendMail(object):
 if __name__ == '__main__':
     SendMail.send_mail('smtp.163.com',
                                  '13417072649@163.com',
-                                 'CLAOIRSRINBXPYRZ',
+                                 '***',
                                  '330908191@qq.com',
                                  'python自动化测试',
                                  '邮件正文',
